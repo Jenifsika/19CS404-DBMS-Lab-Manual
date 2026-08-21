@@ -1,5 +1,6 @@
 # Experiment 3: DML Commands
-
+# REGISTER NO: 212224230019
+# NAME: Annie Jenifsika A
 ## AIM
 To study and implement DML (Data Manipulation Language) commands.
 
@@ -47,123 +48,161 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+<img width="894" height="527" alt="image" src="https://github.com/user-attachments/assets/6641dd68-b54e-40d1-9cc9-1221244f9cc1" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT customer_id,cust_name,city,grade,salesman_id
+FROM customer
+WHERE city='New York' OR grade<=100;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="814" height="250" alt="image" src="https://github.com/user-attachments/assets/0eaecdd3-a5ba-409f-8537-cc6da954fe9a" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="866" height="406" alt="image" src="https://github.com/user-attachments/assets/8b5fee27-08c6-419e-a2b7-e9df9cd22f68" />
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT first_name,last_name,
+CASE
+WHEN (strftime('%Y','2023-12-30')-strftime('%Y',date_of_birth))<20 THEN 'Under 20'
+WHEN (strftime('%Y','2023-12-30')-strftime('%Y',date_of_birth))BETWEEN 20 AND 30 THEN '20-30'
+WHEN (strftime('%Y','2023-12-30')-strftime('%Y',date_of_birth))BETWEEN 31 AND 40 THEN '31-40'
+WHEN (strftime('%Y','2023-12-30')-strftime('%Y',date_of_birth))BETWEEN 41 AND 50 THEN '41-50'
+ELSE 'Above 50'
+END AS AgeGroup
+FROM Patients;
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="881" height="504" alt="image" src="https://github.com/user-attachments/assets/e9f79d36-c0f8-4131-865e-7a5871f5d2a5" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="876" height="519" alt="image" src="https://github.com/user-attachments/assets/0f8eb894-b93d-4b7a-9561-691e450dc6bd" />
+
 
 ```sql
--- Paste your SQL code below for Question 3
+DELETE FROM Doctors
+WHERE (specialization='Pediatrics'OR specialization='Cardiology')
+AND last_name='Brown';
 ```
 
 **Output:**
+<img width="776" height="500" alt="image" src="https://github.com/user-attachments/assets/8c6b66fc-b554-4d1c-b61a-fb24938c0fdf" />
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="909" height="495" alt="image" src="https://github.com/user-attachments/assets/f1f33215-6756-4158-bb9e-519c5f3d56db" />
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT product_id,original_price,discount_percentage,
+original_price*(1-discount_percentage)AS discounted_price
+FROM Products;
 ```
 
 **Output:**
+<img width="765" height="220" alt="image" src="https://github.com/user-attachments/assets/80761b79-fbf3-42dd-9b2d-e1ff747e3977" />
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="897" height="324" alt="image" src="https://github.com/user-attachments/assets/8ed49a30-0ae2-41a8-98c1-910abb0a93a6" />
+
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE sales
+set sell_price=sell_price*1.05
+WHERE product_id=15 AND sale_date='2023-01-31';
 ```
 
 **Output:**
+<img width="1013" height="254" alt="image" src="https://github.com/user-attachments/assets/30bd5a4f-e038-4c26-968c-c7834311aad7" />
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="879" height="240" alt="image" src="https://github.com/user-attachments/assets/f85ad262-e00c-49b6-8ea2-e87df24668bc" />
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT *
+FROM EmployeeInfo
+WHERE Address='Delhi(DEL)';
 ```
 
 **Output:**
+<img width="979" height="189" alt="image" src="https://github.com/user-attachments/assets/1253d417-e737-4acb-93ca-133e5dcf3d47" />
 
-![Output6](output.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="858" height="459" alt="image" src="https://github.com/user-attachments/assets/665a6973-2845-4e6c-a742-59ea061b637b" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+UPDATE Employees
+Set salary=salary*2
+WHERE department_id=20 AND job_id LIKE'%MAN';
 ```
 
 **Output:**
+<img width="1066" height="216" alt="image" src="https://github.com/user-attachments/assets/690b2c6c-9936-4041-b2f2-cfa015fa3764" />
 
-![Output7](output.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="922" height="380" alt="image" src="https://github.com/user-attachments/assets/6526c056-dad7-4da1-9252-c81ba4acebeb" />
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT ename,job,Substr(ename,1,3)||Substr(job,-3)AS ConcatenatedString
+FROM emp;
 ```
 
 **Output:**
+<img width="646" height="354" alt="image" src="https://github.com/user-attachments/assets/eca0a108-2003-4982-875c-f353840d670e" />
 
-![Output8](output.png)
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="893" height="352" alt="image" src="https://github.com/user-attachments/assets/5285e739-5e47-458c-98ee-642d0233e4a0" />
+
 
 ```sql
--- Paste your SQL code below for Question 9
+Update products
+set sell_price=sell_price*1.10
+WHERE category='Bakery';
 ```
 
 **Output:**
+<img width="1144" height="190" alt="image" src="https://github.com/user-attachments/assets/b7ad338d-d09c-4f63-8f80-0489455e954b" />
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="880" height="303" alt="image" src="https://github.com/user-attachments/assets/75fdef97-5c3b-4a9f-9a84-f5aaa199f5f5" />
+
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT *
+FROM EmployeeInfo
+WHERE EmpLname LIKE'____A';
 ```
 
 **Output:**
+<img width="1374" height="302" alt="image" src="https://github.com/user-attachments/assets/d5026406-5c75-4637-b250-48813c39546a" />
 
-![Output10](output.png)
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
