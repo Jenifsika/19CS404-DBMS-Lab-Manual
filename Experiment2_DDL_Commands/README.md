@@ -1,5 +1,6 @@
 # Experiment 2: DDL Commands
-
+## REGISTER NO:212224230019
+# NAME: Annie Jenifsika A
 ## AIM
 To study and implement DDL commands and different types of constraints.
 
@@ -105,123 +106,213 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a table named Department with the following constraints:
+DepartmentID as INTEGER should be the primary key.
+DepartmentName as TEXT should be unique and not NULL.
+Location as TEXT.
+For example:
 
-```sql
--- Paste your SQL code below for Question 1
+Test	Result
+INSERT INTO Department (DepartmentID, DepartmentName, Location) VALUES (1, 'Human Resources', 'New York');
+select * from Department;
+DepartmentID  DepartmentName   Location
+------------  ---------------  ----------
+1             Human Resources  New Y
+
+
+```
+CREATE TABLE Department(
+DepartmentID INTEGER PRIMARY KEY,
+DepartmentName TEXT NOT NULL UNIQUE,
+Location TEXT
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1428" height="278" alt="image" src="https://github.com/user-attachments/assets/481458c1-72aa-40cb-9fc4-2b264949caa6" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Create a table named ProjectAssignments with the following constraints:
+AssignmentID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
+AssignmentDate as DATE should be NOT NULL.
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE ProjectAssignments(
+AssignmentID INTEGER PRIMARY KEY,
+EmployeeID INTEGER ,
+ProjectID INTEGER ,
+AssignmentDate DATE NOT NULL,
+FOREIGN KEY(EmployeeID)REFERENCES Employees(EmployeeID),
+FOREIGN KEY(ProjectID)REFERENCES Projects(ProjectID)
+);
 ```
 
 **Output:**
+<img width="1484" height="288" alt="image" src="https://github.com/user-attachments/assets/04eed3be-f8d6-4a1f-bfbd-d76df055a1f0" />
 
-![Output2](output.png)
 
 **Question 3**
 ---
--- Paste Question 3 here
+
+Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
+
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE Orders(
+OrderID INTEGER PRIMARY KEY,
+OrderDate DATE NOT NULL,
+CustomerID INTEGER,
+FOREIGN KEY(CustomerID)REFERENCES Customers(CustomerID));
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1356" height="273" alt="image" src="https://github.com/user-attachments/assets/3cf9791b-d17c-4ff4-8bbf-3314928eb638" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write an SQL query to add two new columns, department_id and manager_id, to the table employee with datatype of INTEGER. The manager_id column should have a default value of NULL.
+
+ 
 
 ```sql
--- Paste your SQL code below for Question 4
+ALTER TABLE employee
+ADD COLUMN department_id INTEGER;
+ALTER TABLE employee
+ADD COLUMN manager_id INTEGER DEFAULT NULL;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1007" height="233" alt="image" src="https://github.com/user-attachments/assets/3921c77b-5e04-4f79-afb9-ddcdca909865" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Insert a product with ProductID 104, Name Tablet, and Category Electronics into the Products table, where Price and Stock should use default values.
 
 ```sql
--- Paste your SQL code below for Question 5
+INSERT INTO  Products(ProductID,Name,Category)
+VALUES(104,'Tablet','Electronics');
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1026" height="194" alt="image" src="https://github.com/user-attachments/assets/3e0460d7-5dc9-4a26-a648-c34af46a10ea" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL Query  to change the name of attribute "name" to "first_name"  and add mobilenumber as number ,DOB as Date in the table Companies
 
 ```sql
--- Paste your SQL code below for Question 6
+ALTER TABLE Companies
+RENAME COLUMN name to first_name;
+ALTER TABLE Companies
+ADD COLUMN mobilenumber number;
+ALTER TABLE Companies
+ADD COLUMN DOB Date;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="922" height="293" alt="image" src="https://github.com/user-attachments/assets/7a9be798-ed6a-481b-a770-05a5612f22e5" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Bonuses with the following constraints:
+BonusID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+BonusAmount as REAL should be greater than 0.
+BonusDate as DATE.
+Reason as TEXT should not be NULL.
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Bonuses(
+BonusID INTEGER PRIMARY KEY,
+EmployeeID INTEGER ,
+BonusAmount REAL CHECK(BonusAmount>0),
+BonusDate DATE,
+Reason TEXT NOT NULL,
+FOREIGN KEY (EmployeeID)REFERENCES Employees(EmployeeID)
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1373" height="214" alt="image" src="https://github.com/user-attachments/assets/67a23d86-b226-4adb-90b6-0644ed01d204" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Create a table named Invoices with the following constraints:
 
-```sql
--- Paste your SQL code below for Question 8
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+DueDate as DATE should be greater than the InvoiceDate.
+Amount as REAL should be greater than 0.
+
+```
+sql
+CREATE TABLE Invoices(
+InvoiceID INTEGER PRIMARY KEY,
+InvoiceDate DATE,
+DueDate DATE CHECK (DueDate>InvoiceDate),
+Amount REAL CHECK(Amount>0)
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="885" height="212" alt="image" src="https://github.com/user-attachments/assets/bedf109c-4608-42e6-8009-65fb49c18c89" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Insert all customers from Old_customers into Customers
+
+Table attributes are CustomerID, Name, Address, Email
 
 ```sql
--- Paste your SQL code below for Question 9
+INSERT INTO Customers(CustomerID,Name,Address,Email)
+SELECT * FROM Old_customers;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="871" height="239" alt="image" src="https://github.com/user-attachments/assets/bed44c17-1ca8-49bc-8ae4-bcf1f32db9f2" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Insert the below data into the Employee table, allowing the Department and Salary columns to take their default values.
+
+EmployeeID  Name         Position
+----------  -----------  ----------
+4           Emily White  Analyst
+
+Note: The Department and Salary columns will use their default values.    
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO  Employee(EmployeeID,Name,Position)
+VALUES(4,'Emily White','Analyst');
 ```
+
 
 **Output:**
 
-![Output10](output.png)
+<img width="1191" height="329" alt="image" src="https://github.com/user-attachments/assets/c9d88cc4-14f5-422d-85ae-aa8c8f506205" />
+
 
 
 ## RESULT
