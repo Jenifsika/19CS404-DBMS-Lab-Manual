@@ -184,6 +184,8 @@ having category_id>2
 **Output:**
 
 ![{20F7198D-1790-4B85-9D27-C42AE4475B11}](https://github.com/user-attachments/assets/8044026c-f4db-43ce-977e-b3d0b7e35172)
+**seb score**
+<img width="838" height="173" alt="image" src="https://github.com/user-attachments/assets/d14b841e-43db-499e-9bc7-579182cbf8a1" />
 
 
 
