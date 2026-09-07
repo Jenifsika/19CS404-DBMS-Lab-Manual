@@ -312,8 +312,8 @@ VALUES(4,'Emily White','Analyst');
 **Output:**
 
 <img width="1191" height="329" alt="image" src="https://github.com/user-attachments/assets/c9d88cc4-14f5-422d-85ae-aa8c8f506205" />
-
-
+**seb score**
+<img width="833" height="152" alt="image" src="https://github.com/user-attachments/assets/f25fb537-15c6-4ade-a35a-f30c0e4216ee" />
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
