@@ -202,6 +202,8 @@ WHERE EmpLname LIKE'____A';
 
 **Output:**
 <img width="1374" height="302" alt="image" src="https://github.com/user-attachments/assets/d5026406-5c75-4637-b250-48813c39546a" />
+**seb score**
+<img width="762" height="137" alt="image" src="https://github.com/user-attachments/assets/0d4e87b9-22fd-4c79-aa48-1287a926d931" />
 
 
 ## RESULT
